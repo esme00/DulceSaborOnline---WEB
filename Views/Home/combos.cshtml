@@ -3,6 +3,17 @@
 *@
 @{
 }
+<!-- Fijar botón -->
+<div class="container d-flex">
+    <a class="fixed-button btn-dark" href="@Url.Action("Index", "Pagos")">
+        <img src="/img/boton-de-compra (1).png">
+
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            99+
+            <span class="visually-hidden"></span>
+        </span>
+    </a>
+</div>
 
 <div class="container my-5 pt-5">
     <h1 class="text-center">Combos de Comida</h1>
@@ -14,13 +25,19 @@
                 <div class="card h-100" style="background-color:  #EEE8AA;">
                     <img src="@combo.imagen" class="card-img-top" style="max-height: 200px;" alt="Combo 1">
                     <div class="card-body text-center">
-                        <h5 class="card-title">@combo.id_combo</h5>
-                        <p class="card-text">@combo.descripcion</p>
+                        <h5 class="card-title"><label>Combo #:</label>@combo.id_combo</h5>
+                        <p class="card-text"> @combo.descripcion</p>
+                        <p>Precio:</p> 
+                        <p class="card-text"><label>$</label> @combo.precio</p>
 
                         <form asp-controller="Home" asp-action="ordenarcombo" method="post">
+                            <input type="hidden" name="idcombo" value="@combo.id_combo" /> <!-- Agrega un campo oculto para almacenar el ID del item -->
+                            <button type="submit" class="btn btn-dark" id="btnAgregarElemento">Pedir</button>
+                        </form>
+                      @*   <form asp-controller="Home" asp-action="ordenarcombo" method="post">
                             <input type="hidden" name="idcombo" value="@combo.id_combo" />
                             <button type="submit" class="btn btn-primary">Reordenar Pedido</button>
-                        </form>
+                        </form> *@
                     </div>
                 </div>
             </div>
