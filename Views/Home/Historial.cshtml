@@ -1,4 +1,6 @@
-﻿@*
+﻿
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
@@ -8,10 +10,10 @@
             <h2 class=" text-center">Historial de Pedidos</h2>
             <!-- Ejemplo de un pedido entregado -->
             <div class="card order-card mt-5">
-                <div class="row g-0">
+                <div class="row g-0 mt-3">
                     @foreach (var pedido in Model)
                     {
-                        <div class="historial-item">
+                        <div class="historial-item mt-3">
                             <h4>Pedido # @pedido.IdPedido</h4>
                             <p>Fecha: @(pedido.Detalles.Count > 0 ? pedido.Detalles[0].FechaHora.ToString() : "")</p>
                             <p>Nombre(s) de los ítem(s):</p>
@@ -32,5 +34,5 @@
                 </div>
             </div>
         </div>
-     </div>
+    </div>
 </div>
