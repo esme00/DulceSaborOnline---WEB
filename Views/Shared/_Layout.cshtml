@@ -59,7 +59,7 @@
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DULCE SABOR</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -96,9 +96,7 @@
         </main>
     </div>
 
-    <footer class="footer container my-5">
-        <p>&copy; 2024 Mi Sitio Web</p>
-    </footer>
+   
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -107,4 +105,34 @@
     <script src="~/js/foto.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+<footer class="footer container-fluid  text-light py-4" style="background-color: #EEE8AA;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-dark">
+                <h5>Contacto</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Principal #123, Ciudad Santa Ana, Santa Ana, El Salvador</li>
+                    <li><i class="fas fa-phone-alt"></i> Teléfono: (503) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> Email: info@DulceSabor.com</li>
+                </ul>
+            </div>
+            <div class="col-md-4  text-dark ">
+                <h5>Horario</h5>
+                <p>Lunes a Viernes: 11:00am - 10:00pm</p>
+                <p>Sábados y Domingos: 12:00pm - 11:00pm</p>
+            </div>
+            <div class="col-md-4  text-dark">
+                <h5>Síguenos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-3  text-dark">
+        <p>&copy; 2024 Dulce Sabor | Todos los derechos reservados</p>
+    </div>
+</footer>
 </html>
