@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="container pt-5">
+    <div class="container">
+        <div class="container order-history-container">
+            <h2 class=" text-center">Historial de Pedidos</h2>
+            <!-- Ejemplo de un pedido entregado -->
+            <div class="card order-card mt-5">
+                <div class="row g-0">
+                    @foreach (var pedido in Model)
+                    {
+                        <div class="historial-item">
+                            <h4>Pedido # @pedido.IdPedido</h4>
+                            <p>Fecha: @(pedido.Detalles.Count > 0 ? pedido.Detalles[0].FechaHora.ToString() : "")</p>
+                            <p>Nombre(s) de los ítem(s):</p>
+                            <ul>
+                                @foreach (var detalle in pedido.Detalles)
+                                {
+                                    <li>@detalle.NombreItemMenu</li>
+                                }
+                            </ul>
+
+                            <!-- Botón de reordenar pedido -->
+                            <form asp-controller="Home" asp-action="ReordenarPedido" method="post">
+                                <input type="hidden" name="idPedido" value="@pedido.IdPedido" />
+                                <button type="submit" class="btn btn-primary">Reordenar Pedido</button>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+     </div>
+</div>

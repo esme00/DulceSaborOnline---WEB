@@ -1,0 +1,105 @@
+﻿@model DulceSaborOnline___WEB.Models.Usuarios
+
+@* REALIZADO  *@
+
+@{
+    ViewData["Title"] = "Control";
+}
+<div class="container my-5 pt-5">
+    <div class="card text-center container  border border-warning" style="width: 900px; height: 100%;">
+        <div class="card-header">
+            <h5 class="card-title" style="font-size:30px">Registro</h5>
+        </div>
+        <div class=" card-body">
+            <!-- Contenido del formulario de registro -->
+            <br>
+            <div>
+                <form method="post" asp-action="registro" asp-controller="registro" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+
+                        <!-- columna 1 -->
+                        <div class="col-md-6">
+                            <div class="" form-group">
+                                <div class="d-flex">
+                                    <div class="form-group px-1">
+                                        <label style="font-size:20px">Nombre</label>
+                                        <input asp-for="nombre" class="form-control" />
+                                        <span asp-validation-for="nombre" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group px-1">
+                                        <label style="font-size:20px">Apellido</label>
+                                        <input asp-for="apellido" class="form-control" />
+                                        <span asp-validation-for="apellido" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <label style="font-size:20px">Telefono</label>
+                                    <input asp-for="telefono" class="form-control" />
+                                    <span asp-validation-for="telefono" class="text-danger"></span>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label style="font-size:20px">Dirección</label>
+                                    <input asp-for="direccion" class="form-control" />
+                                    <span asp-validation-for="direccion" class="text-danger"></span>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label style="font-size:20px">Nombre_usuario</label>
+                                    <input asp-for="nombre_usuario" class="form-control" />
+                                    <span asp-validation-for="nombre_usuario" class="text-danger"></span>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label style="font-size:20px">Contraseña</label>
+                                    <input type="password" asp-for="contrasena" class="form-control" />
+                                    <span asp-validation-for="contrasena" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- columna 2 -->
+                        <div class="col-md-6">
+                            <div class="form-group container">
+                                <div class="text-center">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <!-- Centro el contenido -->
+                                    <div class="image-preview" id="imagePreview">
+                                        <img src="" class="image-preview__image" id="previewImage">
+                                        <span class="image-preview__default-text">Vista previa</span>
+                                    </div>
+                                    @* Coso para la foto *@
+                                    <label for="photo">Incluya una foto</label>
+                                    <div class="row justify-content-center">
+                                        <!-- Centro el row -->
+                                        <input type="file" id="photo" name="archivo" accept="image/*" />
+                                    </div>
+
+
+                                    <!-- Botones de envío -->
+
+                                    <div class="container my-4 pt-4">
+                                        <div class="d-flex justify-content-center text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg mx-2">Iniciar Sesión</button>
+                                            <button class="btn btn-primary btn-lg mx-2" asp-action="registro" asp-controller="registro">Registrarse</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

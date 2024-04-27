@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Inicio de Sesión";
+}
+
+@* REALIZADO *@
+
+<div class="container my-5 pt-5 d-flex justify-content-center align-items-center mt-5">
+    <div class="card border border-warning" style="width: 500px;">
+        <div class="card-header mt-3">
+            <h5 style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif;">Inicio de Sesión</h5>
+        </div>
+        <div class="card-body text-center mt-5" style="">
+            <form method="post" action="@Url.Action("Login", "Autenticacion")">
+                @Html.AntiForgeryToken()
+                <!-- Contenido del formulario de inicio de sesión -->
+
+                <label class="card-title" style="font-size: 23px;" for="correo">Usuario o Correo*</label>
+                <input name="correo" id="correo" class="form-control" type="text">
+
+                <br>
+                <label for="clave" style="font-size: 23px;" class="form-label text-center">Password*</label>
+                <input name="contrasena" id="contrasena" type="password" class="form-control" aria-describedby="passwordHelpBlock">
+                <div style="text-align: left;">
+                    <label style="font-size: 16px; text-decoration-color: gray;">*campos requeridos</label>
+                </div>
+
+
+                <div class="container my-4 pt-4">
+                    <div class="d-flex justify-content-center text-center">
+                        <button type="submit" class="btn btn-primary btn-lg mx-2">Iniciar Sesión</button>
+
+                    </div>
+                    <br>
+                    <label style="font-size: 20px;">------------<strong>¿No tienes cuenta?</strong>-----------</label>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary btn-lg mx-2" asp-action="registro" asp-controller="registro">Registrarse</button>
+                </div>
+            </form>
+            <!-- Mensaje de error -->
+            @if (ViewData["Error"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["Error"]
+                </div>
+            }
+        </div>
+    </div>
+</div>
